@@ -1,10 +1,12 @@
 (ns helda-cli.dsl.entities)
 
 (defn new-entity [world model]
-  (-> {}
-    (assoc :world (name world))
-    (assoc :model (name model))
-    )
+  {
+    :world (name world)
+    :model (name model)
+    :tags []
+    :attrs {}
+    }
   )
 
 (defn tags [entity & tags-list] (assoc entity :tags tags-list))

@@ -3,10 +3,14 @@
   )
 
 (defn new-model [package model-name]
-  (-> {}
-    (assoc :package (name package))
-    (assoc :name (name model-name))
-    )
+  {
+    :package (name package)
+    :name (name model-name)
+    :full-name (str (name package) "." (name model-name))
+    :extends []
+    :fields {}
+    :actions {}
+    }
   )
 
 (defn extends [model & models]
