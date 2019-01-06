@@ -1,6 +1,7 @@
 (ns helda-cli.core
   (:gen-class)
   (require
+    [helda-cli.dsl.entities :as entities]
     [helda-cli.dsl.models :as models]
     )
   )
@@ -21,6 +22,24 @@
 
 (defn add-action! [action-name target-model]
   (swap! cur-model models/add-action action-name target-model)
+  )
+
+(def cur-entity (atom nil))
+
+(defn new-entity! [world model]
+  (reset! cur-entity (entities/new-entity world model))
+  )
+
+(defn tags! [& tags-list]
+  (swap! cur-entity #(apply entities/tags % tags-list))
+  )
+
+(defn description! [entity description-text]
+  (swap! cur-entity entities/description description-text)
+  )
+
+(defn set-attr! [entity a v]
+  (swap! cur-entity entities/set-attr a v)
   )
 
 (defn -main
