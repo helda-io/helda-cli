@@ -2,14 +2,14 @@
 
 (-> (new-model "owgame" "Hero")
   (extends "geo.GeoItem")
-  (add-field :name "Str")
-  (add-field :bio "Str")
-  (add-field :strength "Int")
-  (add-field :dexterity "Int")
-  (add-field :constitution "Int")
-  (add-field :intelligence "Int")
-  (add-field :wisdom "Int")
-  (add-field :charisma "Int")
+  (add-field :name "String")
+  (add-field :bio "String")
+  (add-field :strength "Integer")
+  (add-field :dexterity "Integer")
+  (add-field :constitution "Integer")
+  (add-field :intelligence "Integer")
+  (add-field :wisdom "Integer")
+  (add-field :charisma "Integer")
   println
   )
 
