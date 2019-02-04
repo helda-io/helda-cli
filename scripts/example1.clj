@@ -13,7 +13,7 @@
   println
   )
 
-(use 'helda-cli.dsl.entities)
+(use 'helda-cli.dsl.entities.create)
 
 (let [world "owgame-dev"]
   (-> (new-entity world "owgame.Hero")

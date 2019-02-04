@@ -1,4 +1,4 @@
-(ns helda-cli.dsl.entities)
+(ns helda-cli.dsl.entities.create)
 
 (defn new-entity [world model]
   {
